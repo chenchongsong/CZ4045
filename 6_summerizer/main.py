@@ -50,15 +50,32 @@ def get_noun_adj_pairs(doc):
                 result_pairs.append((token.head.text, token.text))
 
         if token.pos_ in ["NOUN", "PROPN"] and token.dep_ == "nsubj":
-            adj_list = [r for r in token.head.rights if r.pos_ == "ADJ"]
-            if adj_list:
-                result_pairs.append((token.text, adj_list[0].text))
+            noun_list = [token]
+            for noun in noun_list:
+                for child in noun.children:
+                    if child.pos_ in ["NOUN", "PROPN"] and child.dep_ == "conj" and child not in noun_list:
+                        noun_list.append(child)
+
+            adj_list = []
+            for r in token.head.rights:
+                if r.pos_ == "ADJ":
+                    adj_list.append(r)
+                    break
+            for adj in adj_list:
+                for child in adj.children:
+                    if child.pos_ == "ADJ" and child.dep_ == "conj" and child not in adj_list:
+                        adj_list.append(child)
+                        break
+
+            for noun in noun_list:
+                for adj in adj_list:
+                    result_pairs.append((noun.text, adj.text))
 
     return result_pairs
 
 
 if __name__ == "__main__":
-    doc_demo = nlp("The chicken parm and crab tortellini were also very good and very big.")
+    doc_demo = nlp("The chicken parm, and crab tortellini were also very good and very big.")
     for token in doc_demo:
         print(token.text, token.dep_, token.head.text, token.head.pos_, [child for child in token.children], token.pos_, token.tag_)
     print(get_noun_adj_pairs(doc_demo))

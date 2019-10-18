@@ -8,6 +8,7 @@ import string
 # nltk.download('averaged_perceptron_tagger')
 # nltk.download('universal_tagset')
 
+
 def select_sentence(fname):
     text_list = []
     for line in open(fname, 'r', encoding='ISO-8859-1'):
@@ -30,4 +31,3 @@ if __name__ == '__main__':
     sample = select_sentence('../reviewSelected100.json')
     # sample = ['hello, I am huimin. And you?', "can't"]
     pos_tagging(sample)
-    
