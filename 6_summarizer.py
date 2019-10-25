@@ -20,28 +20,6 @@ sample_doc1 = nlp("""
     Ask to sit in the side room if it's available.""")
 
 
-# def get_compound_adj_pairs(doc, verbose=False):
-#     """Return tuples of (multi-noun word, adjective or verb) for document."""
-#     compounds = [tok for tok in doc if tok.dep_ == 'compound']  # Get list of compounds in doc
-#     compounds = [c for c in compounds if c.i == 0 or doc[c.i - 1].dep_ != 'compound']  # Remove middle parts of compound nouns, but avoid index errors
-#     tuple_list = []
-#     if compounds:
-#         for tok in compounds:
-#             pair_item_1, pair_item_2 = (False, False)  # initialize false variables
-#             noun = doc[tok.i: tok.head.i + 1]
-#             pair_item_1 = noun
-#             # If noun is in the subject, we may be looking for adjective in predicate
-#             # In simple cases, this would mean that the noun shares a head with the adjective
-#             if noun.root.dep_ == 'nsubj':
-#                 adj_list = [r for r in noun.root.head.rights if r.pos_ == 'ADJ']
-#                 if adj_list:
-#                     pair_item_2 = adj_list[0]
-#
-#             if pair_item_1 and pair_item_2:
-#                 tuple_list.append((pair_item_1, pair_item_2))
-#     return tuple_list
-
-
 def get_noun_adj_pairs(doc):
     result_pairs = []
     for token in doc:

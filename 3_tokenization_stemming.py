@@ -6,6 +6,8 @@ from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from collections import Counter
 
+from common import get_all_review_texts
+
 STOP_WORDS = stopwords.words("english") + [".", ",", "!", "?", "'s", "...", "(", ")", "n't", "``", "also", "even", "would", "us", "could", "one", "'ve", "-", "''", "'m"]
 print(STOP_WORDS)
 
@@ -21,15 +23,9 @@ def stem_text(text):
 
 
 if __name__ == "__main__":
-    texts = []
-    texts_stemmed = []
+    texts = get_all_review_texts()
+    texts_stemmed = [stem_text(text) for text in texts]
     porter = PorterStemmer()
-
-    with open("reviewSelected100.json", encoding="ISO-8859-1") as f:
-        for line in f:
-            review = json.loads(line)
-            texts.append(review["text"])
-            texts_stemmed.append(stem_text(review["text"]))
 
     len2num = Counter()
     len2num_stemmed = Counter()

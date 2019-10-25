@@ -1,23 +1,17 @@
-import nltk
 import json
 import matplotlib.pyplot as plt
 import spacy
-from nltk.corpus import stopwords
 from collections import Counter
 import random
 
 progress_count = 0
 
+
 def sentence_text(text, nlp):
-
     doc = nlp(text)
-
     sentences = [sent.string.strip() for sent in doc.sents]
     print(sentences[0])
     return sentences
-
-
-#    return " ".join(tokens_stemmed)
 
 
 if __name__ == "__main__":
