@@ -1,5 +1,4 @@
 import nltk
-import json
 import matplotlib.pyplot as plt
 
 from nltk.stem import PorterStemmer
@@ -9,6 +8,7 @@ from collections import Counter
 from common import get_all_review_texts
 
 STOP_WORDS = stopwords.words("english") + [".", ",", "!", "?", "'s", "...", "(", ")", "n't", "``", "also", "even", "would", "us", "could", "one", "'ve", "-", "''", "'m"]
+print("STOP_WORDS are:")
 print(STOP_WORDS)
 
 
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     plt.xlabel("Length of Review")
     plt.ylabel("No. of Reviews")
     plt.title("Distribution of Review Lengths (without Stemming)")
-    plt.savefig("3_tokenization_stemming/fig3-1-dist-nostem")
+    plt.savefig("assets/task3-fig1-dist-nostem")
     # plt.show()
     plt.clf()
 
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     plt.xlabel("Length of Review")
     plt.ylabel("No. of Reviews")
     plt.title("Distribution of Review Lengths (without Stemming)")
-    plt.savefig("3_tokenization_stemming/fig3-2-dist-withstem")
+    plt.savefig("assets/task3-fig2-dist-withstem")
     # plt.show()
 
     print("Without Stemming")
