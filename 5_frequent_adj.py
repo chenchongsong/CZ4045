@@ -101,9 +101,9 @@ def indicative10(f_name):
 
 
 if __name__ == '__main__':
-    # tab = top10('../reviewSamples20.json')
-    tab = top10('../reviewSelected100.json')
+    # tab = top10('reviewSamples20.json')
+    tab = top10('reviewSelected100.json')
     print(tab)
-    # tab = indicative10('../reviewSamples20.json')
-    tab = indicative10('../reviewSelected100.json')
+    # tab = indicative10('reviewSamples20.json')
+    tab = indicative10('reviewSelected100.json')
     print(tab)
