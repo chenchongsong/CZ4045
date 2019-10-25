@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import spacy
 from collections import Counter
 import random
+from common import get_five_random_texts
 
 progress_count = 0
 
@@ -38,12 +39,12 @@ if __name__ == "__main__":
         plt.xlabel("Length of Review")
         plt.ylabel("No. of Reviews")
         plt.title("Distribution of Review Lengths")
-        plt.savefig("2_sentence_segmentation/fig{}".format(i + 1))
+        plt.savefig("task2_fig{}".format(i + 1))
         # plt.show()
         plt.clf()
 
-    random.seed()
-    for i in range(5):
-        curr_text = random.choice(texts[random.randint(0, 4)])
+
+    # for sample 5 sentences
+    for curr_text in get_five_random_texts():
         print(curr_text)
         print(sentence_text(curr_text, nlp))
