@@ -1,11 +1,6 @@
 import nltk
 import string
 from common import get_five_random_sentences
-
-# Please Download the modules needed
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('universal_tagset')
     
 
 def pos_tagging(sample):

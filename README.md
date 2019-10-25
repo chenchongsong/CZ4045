@@ -16,22 +16,32 @@ Download pretrained statistical models for SpaCy
 python3 -m spacy download en_core_web_sm
 ```
 
+Download model for NLTK
+```shell
+python
+>>> import nltk
+>>> nltk.download()
+```
+
+Place `reviewSelected100.json` under the root folder, so that the directory structure looks like this:
+```
+cz4045
+   |——————assets
+   |——————2_sentence_segmentation.py
+   |       ...
+   |——————7_named_entity_recognition.py
+   └——————reviewSelected100.json
+```
+
 ### Getting Started
 
-To run task 3 (tokenization and stemming):
+To run task 2 - 7 :
 ```shell
-python3 3_tokenization_stemming/main.py
-```
-
-To run task 4 (POS Tagging):
-```shell
-cd 4_pos_tagging
-python3 main.py
-```
-
-To run task 5 (Frequent Adjectives):
-```shell
-cd 5_frequent_adj
-python3 run.py
+python3 2_sentence_segmentation.py
+python3 3_tokenization_stemming.py
+python3 4_pos_tagging.py
+python3 5_frequent_adj.py
+python3 6_summarizer.py
+python3 7_named_entity_recognition.py
 ```
 
