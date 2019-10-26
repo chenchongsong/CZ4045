@@ -23,25 +23,9 @@ def get_five_random_texts():
     return texts
 
 
-def get_five_random_sentences():
-    texts = get_five_random_texts()
-    sentences = []
-    for text in texts:
-        doc = nlp(text)
-        for sent in doc.sents:
-            sentences.append(sent.string.strip())
-            break
-    return sentences
-
-
 if __name__ == "__main__":
     print("First randomly selected 5 reviews\n")
     texts = get_five_random_texts()
     for text in texts:
         print(text)
         print("\n")
-
-    print("\nFirst Sentences from the 5 reviews above\n")
-    sentences = get_five_random_sentences()
-    for sent in sentences:
-        print(sent)

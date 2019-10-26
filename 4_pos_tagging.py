@@ -1,6 +1,5 @@
 import nltk
 import string
-from common import get_five_random_sentences
     
 
 def pos_tagging(sample):
@@ -15,5 +14,5 @@ def pos_tagging(sample):
 
 
 if __name__ == '__main__':
-    sample = get_five_random_sentences()
+    sample = ["", "", "", "", ""]  # TODO put 5 sample sentences from each of the 5 reviews
     pos_tagging(sample)
