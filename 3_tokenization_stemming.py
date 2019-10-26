@@ -73,10 +73,19 @@ if __name__ == "__main__":
     print("\tLength {} has a maximum number of reviews: {}".format(nums.index(max(nums)), max(nums)))  # 30, 132
     print("\tTop 20 frequent words: {}".format(word2freq.most_common(20)))
 
+    # ('food', 8580), ('place', 8236), ('good', 7919), ('great', 6295), ('service', 6027),
+    # ('like', 5534), ('get', 5216), ('time', 5172), ('back', 4717), ('go', 4145),
+    # ('really', 3731), ('$', 3706), ('got', 3171), ('order', 2820), ('nice', 2756),
+    # ('ordered', 2620), ('came', 2614), ('best', 2605), ('always', 2587), ('chicken', 2515)
+
     print("With Stemming")
     print("\tMax Review Length: {}".format(max(lens_stemmed)))  # 1194
     print("\tLength {} has a maximum number of reviews: {}".format(nums_stemmed.index(max(nums_stemmed)), max(nums_stemmed)))
-    # 30, 133 (slightly different from 132 due to syntax error of reviews e.g. " ., ")
+    # 30, 133 (slightly different from 132 due to implementation of stemmer and syntax errors of reviews e.g. " ., ")
     print("\tTop 20 frequent words: {}".format(word2freq_stemmed.most_common(20)))
 
+    # ('wa', 31504), ('thi', 13927), ('place', 9408), ('food', 8731), ('good', 8055),
+    # ('veri', 6825), ('time', 6588), ('get', 6390), ('servic', 6338), ('great', 6302),
+    # ('like', 6231), ('order', 6150), ('go', 5993), ('back', 4744), ('tri', 3978),
+    # ('come', 3784), ('realli', 3731), ('$', 3706), ('love', 3291), ('onli', 3181)
 
