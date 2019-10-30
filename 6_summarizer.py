@@ -7,7 +7,7 @@ nlp = spacy.load("en_core_web_sm")
 
 def concat_noun_with_compound(noun):
     for child in noun.children:
-        if child.pos_ in ["NOUN", "PROPN"] and child.dep_ == "compond":
+        if child.pos_ in ["NOUN", "PROPN"] and child.dep_ == "compound":
             return child.text + " " + noun.text
     return noun.text
 
