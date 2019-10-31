@@ -18,7 +18,7 @@ python3 -m spacy download en_core_web_sm
 
 Download model for NLTK
 ```shell
-python
+python3
 >>> import nltk
 >>> nltk.download()
 ```
@@ -35,7 +35,7 @@ cz4045
 
 ### Getting Started
 
-To run task 2 - 7 :
+To run task 2 ~ 7 :
 ```shell
 python3 2_sentence_segmentation.py
 python3 3_tokenization_stemming.py
